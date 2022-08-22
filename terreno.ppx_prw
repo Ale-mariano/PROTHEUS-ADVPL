@@ -1,0 +1,47 @@
+#line 1 "c:/totvs/protheus/protheus/include\protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\dialog.ch"
+#line 28 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\font.ch"
+#line 29 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\ptmenu.ch"
+#line 31 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\print.ch"
+#line 33 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\colors.ch"
+#line 35 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\folder.ch"
+#line 37 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\msobject.ch"
+#line 38 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\vkey.ch"
+#line 42 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\winapi.ch"
+#line 44 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\fwcommand.ch"
+#line 47 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\fwcss.ch"
+#line 50 "protheus.ch"
+#line 2 "c:/totvs/protheus/workspace/protheus-advpl/terreno.prw"
+#line 1 "c:/totvs/protheus/protheus/include\totvs.ch"
+#line 1 "c:/totvs/protheus/protheus/include\protheus.ch"
+#line 12 "c:/totvs/protheus/workspace/protheus-advpl/terreno.prw"
+Function U_terreno()
+
+Local nMetroquad := RANDOMIZE(1,1000)
+Local  nArea := RANDOMIZE(1,1000)
+Local nPreco := RANDOMIZE(1,1000)
+Local nLargura := RANDOMIZE(1,1000)
+Local nCompr := RANDOMIZE(1,1000)
+
+nLargura := val(FwInputBox("Digite a largura do terreno", " "))
+nCompr := val(FwInputBox("Digite o comprimento do terreno", " "))
+nMetroquad := val(FwInputBox("Digite o valor do metro quadrado "))
+
+nArea := nlargura * ncompr
+nPreco := nArea * nMetroquad
+
+Iif(FindFunction("APMsgInfo"), APMsgInfo("Area = "+CValToChar(nArea),), MsgInfo("Area = "+CValToChar(nArea),))
+Iif(FindFunction("APMsgInfo"), APMsgInfo("Preço = "+CValToChar(nPreco),), MsgInfo("Preço = "+CValToChar(nPreco),))
+
+
+Return
