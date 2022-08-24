@@ -16,5 +16,4 @@ Alert("A area do circulo é: " + str(nArea,8,2))
 
 
 
-
 RETURN
