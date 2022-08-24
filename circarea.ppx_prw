@@ -21,9 +21,6 @@
 #line 47 "protheus.ch"
 #line 1 "c:/totvs/protheus/protheus/include\fwcss.ch"
 #line 50 "protheus.ch"
-#line 2 "c:/totvs/protheus/workspace/protheus-advpl/circarea.prw"
-#line 1 "c:/totvs/protheus/protheus/include\totvs.ch"
-#line 1 "c:/totvs/protheus/protheus/include\protheus.ch"
 #line 5 "c:/totvs/protheus/workspace/protheus-advpl/circarea.prw"
 Function U_CircArea()
 
@@ -40,5 +37,4 @@ Alert("A area do circulo é: " + str(nArea,8,2))
 
 
 
-
-Return
+RETURN

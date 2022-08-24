@@ -1,5 +1,5 @@
 #INCLUDE 'protheus.ch'
-#INCLUDE 'totvs.ch'
+
 
 
 User Function CircArea()
@@ -17,5 +17,4 @@ Alert("A area do circulo é: " + str(nArea,8,2))
 
 
 
-    
-Return 
+RETURN
