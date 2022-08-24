@@ -19,7 +19,7 @@ Local nCompr := RANDOMIZE(1,1000)
 
 nLargura := val(FwInputBox("Digite a largura do terreno", " ")) //A função FWInputBox permite que o programa interaja com o usuário, pedindo a ele que digite uma informação ou dado
 nCompr := val(FwInputBox("Digite o comprimento do terreno", " "))
-nMetroquad := val(FwInputBox("Digite o valor do metro quadrado "))
+nMetroquad := val(FwInputBox("Digite o valor do metro quadrado", " "))
 
 nArea := nlargura * ncompr
 nPreco := nArea * nMetroquad

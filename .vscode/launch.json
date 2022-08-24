@@ -22,6 +22,10 @@
 		},
 		{
 			"label": "U_media_idades"
+		},
+		{
+			"args": [],
+			"label": "U_CircArea"
 		}
 	],
 	"lastProgramExecuted": "U_media_idades"

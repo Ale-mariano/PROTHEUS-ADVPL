@@ -13,20 +13,22 @@
 
 User Function media_idades
 
-	Private nIdade := RANDOMIZE(0,100)
-	Private nMedia := RANDOMIZE(0,100)
-	Private nSoma := RANDOMIZE(0,100)
-	Private nCont := 0
+	Local nIdade := RANDOMIZE(1,100)
+	Local nIdade2 := RANDOMIZE(1,100)
+	Local nMedia 
+	Local nSoma := 0
+	Local nCont := 0
 
-	nIdade:= val(FwInputBox("Digite as idades" +CHR(13) + CHR(10)))
+	nIdade1:= val(FwInputBox("Digite a primeida idade "))
+    nIdade2 := val(FwInputBox("Digite a segunda idade ")) 
     
-	while nIdade > 0
+	while (nIdade > 0) 
 		nSoma := nSoma + nIdade
 		nCont := nCont + 1
 		MsgInfo(nIdade)
 
 	ENDDO
-
+	
 	IF nCont = 0
 		MsgInfo("Impossivel calcular")
 

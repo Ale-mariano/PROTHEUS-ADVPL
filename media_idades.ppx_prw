@@ -21,27 +21,35 @@
 #line 47 "protheus.ch"
 #line 1 "c:/totvs/protheus/protheus/include\fwcss.ch"
 #line 50 "protheus.ch"
-#line 2 "c:/totvs/protheus/workspace/protheus-advpl/terreno.prw"
+#line 2 "c:/totvs/protheus/workspace/protheus-advpl/media_idades.prw"
 #line 1 "c:/totvs/protheus/protheus/include\totvs.ch"
 #line 1 "c:/totvs/protheus/protheus/include\protheus.ch"
-#line 12 "c:/totvs/protheus/workspace/protheus-advpl/terreno.prw"
-Function U_terreno()
+#line 14 "c:/totvs/protheus/workspace/protheus-advpl/media_idades.prw"
+Function U_media_idades
 
-Local nMetroquad := RANDOMIZE(1,1000)
-Local  nArea := RANDOMIZE(1,1000)
-Local nPreco := RANDOMIZE(1,1000)
-Local nLargura := RANDOMIZE(1,1000)
-Local nCompr := RANDOMIZE(1,1000)
+	Local nIdade := RANDOMIZE(1,100)
+	Local nIdade2 := RANDOMIZE(1,100)
+	Local nMedia
+	Local nSoma := 0
+	Local nCont := 0
 
-nLargura := val(FwInputBox("Digite a largura do terreno", " "))
-nCompr := val(FwInputBox("Digite o comprimento do terreno", " "))
-nMetroquad := val(FwInputBox("Digite o valor do metro quadrado "))
+	nIdade1:= val(FwInputBox("Digite a primeida idade "))
+    nIdade2 := val(FwInputBox("Digite a segunda idade "))
 
-nArea := nlargura * ncompr
-nPreco := nArea * nMetroquad
+	while (nIdade > 0)
+		nSoma := nSoma + nIdade
+		nCont := nCont + 1
+		Iif(FindFunction("APMsgInfo"), APMsgInfo(nIdade,), MsgInfo(nIdade,))
 
-Iif(FindFunction("APMsgInfo"), APMsgInfo("Area = "+CValToChar(nArea),), MsgInfo("Area = "+CValToChar(nArea),))
-Iif(FindFunction("APMsgInfo"), APMsgInfo("Preço = "+CValToChar(nPreco),), MsgInfo("Preço = "+CValToChar(nPreco),))
+	ENDDO
 
+	IF nCont = 0
+		Iif(FindFunction("APMsgInfo"), APMsgInfo("Impossivel calcular",), MsgInfo("Impossivel calcular",))
 
-Return
+	else
+		nMedia := nSoma /nCont
+		Iif(FindFunction("APMsgInfo"), APMsgInfo("Media = "+cvaltochar(nMedia),), MsgInfo("Media = "+cvaltochar(nMedia),))
+
+	ENDIF
+
+return
