@@ -21,40 +21,38 @@
 #line 47 "protheus.ch"
 #line 1 "c:/totvs/protheus/protheus/include\fwcss.ch"
 #line 50 "protheus.ch"
-#line 2 "c:/totvs/protheus/workspace/protheus-advpl/numeros.prw"
+#line 2 "c:/totvs/protheus/workspace/protheus-advpl/imc.prw"
 #line 1 "c:/totvs/protheus/protheus/include\totvs.ch"
 #line 1 "c:/totvs/protheus/protheus/include\protheus.ch"
-#line 3 "c:/totvs/protheus/workspace/protheus-advpl/numeros.prw"
+#line 3 "c:/totvs/protheus/workspace/protheus-advpl/imc.prw"
 #line 1 "c:/totvs/protheus/protheus/include\rwmake.ch"
 #line 1 "c:/totvs/protheus/protheus/include\stdwin.ch"
 #line 14 "rwmake.ch"
-#line 5 "c:/totvs/protheus/workspace/protheus-advpl/numeros.prw"
+#line 5 "c:/totvs/protheus/workspace/protheus-advpl/imc.prw"
+Function U_IMC()
+
+Local nAltura := FwInputBox("Digite sua altura: ", "")
+Local nPeso   := FwInputBox("Digite o seu peso: ", "")
+Local nIMC := 0
 
 
-Function U_Numeros()
+IF "." $ nAltura .or.  "," $nAltura
+     nAltura := val(STRTRAN( nAltura, " , ", " . ",))
 
-Local nNumeroUm
-Local nNumeroDois
-Local nNumeroTres
-local nResultado
-Local cMsg :=  " "
+ELSE
+       nAltura := val(nAltura)/100
+ENDIF
 
-nNumeroUm   := val(FwInputBox("Digite o primeiro numero " ))
-nNumeroDois := val(FwInputBox("Digite o segundo numero " ))
-nNumeroTres := val(FwInputBox("Digite o terceiro numero "))
+IF "." $ nPeso .or.  "," $nPeso
+     nPeso := val(STRTRAN( nPeso, " , ", " . ",))
 
-nResultado := (nNumeroUm * 2) * (nNumeroDois / 2)
-cMsg += "O produto é " + str(nResultado,8,2) + CHR(13) + CHR(10)
+ELSE
+nPeso := val(nPeso)
+ENDIF
 
-nResultado := (nNumeroUm * 3) + nNumeroTres
-cMsg += "A soma é " + str(nResultado,8,2) + CHR(13) + CHR(10)
+nIMC := nPeso / (nAltura ^2)
 
-nResultado := (nNumeroTres ^ 3)
-cMsg += "O Cubo é " + str(nResultado,10,2) + CHR(13) + CHR(10)
-
-Iif(FindFunction("APMsgInfo"), APMsgInfo(cMsg, "resultado"), MsgInfo(cMsg, "resultado"))
-
-
+Iif(FindFunction("APMsgInfo"), APMsgInfo("O seu IMC é: ", +str(nIMC,5,2)), MsgInfo("O seu IMC é: ", +str(nIMC,5,2)))
 
 
 RETURN
