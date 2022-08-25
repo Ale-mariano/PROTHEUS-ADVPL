@@ -41,7 +41,10 @@
 		},
 		{
 			"label": "U_PesqPague"
+		},
+		{
+			"label": "U_DpSalary"
 		}
 	],
-	"lastProgramExecuted": "U_PesqPague"
+	"lastProgramExecuted": "U_DpSalary"
 }
