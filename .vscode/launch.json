@@ -38,7 +38,10 @@
 		},
 		{
 			"label": "U_IMC"
+		},
+		{
+			"label": "U_PesqPague"
 		}
 	],
-	"lastProgramExecuted": "U_IMC"
+	"lastProgramExecuted": "U_PesqPague"
 }

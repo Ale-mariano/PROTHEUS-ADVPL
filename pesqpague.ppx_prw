@@ -21,38 +21,52 @@
 #line 47 "protheus.ch"
 #line 1 "c:/totvs/protheus/protheus/include\fwcss.ch"
 #line 50 "protheus.ch"
-#line 2 "c:/totvs/protheus/workspace/protheus-advpl/imc.prw"
+#line 2 "c:/totvs/protheus/workspace/protheus-advpl/pesqpague.prw"
 #line 1 "c:/totvs/protheus/protheus/include\totvs.ch"
 #line 1 "c:/totvs/protheus/protheus/include\protheus.ch"
-#line 3 "c:/totvs/protheus/workspace/protheus-advpl/imc.prw"
+#line 3 "c:/totvs/protheus/workspace/protheus-advpl/pesqpague.prw"
 #line 1 "c:/totvs/protheus/protheus/include\rwmake.ch"
 #line 1 "c:/totvs/protheus/protheus/include\stdwin.ch"
 #line 14 "rwmake.ch"
-#line 5 "c:/totvs/protheus/workspace/protheus-advpl/imc.prw"
-Function U_IMC()
-
-Local nAltura := FwInputBox("Digite sua altura: ", "")
-Local nPeso   := FwInputBox("Digite o seu peso: ", "")
-Local nIMC := 0
+#line 5 "c:/totvs/protheus/workspace/protheus-advpl/pesqpague.prw"
 
 
-IF "." $ nAltura .or.  "," $nAltura
-     nAltura := val(STRTRAN( nAltura, " , ", " . ",))
+
+
+
+
+
+
+
+
+Function U_PesqPague()
+
+Local nLimite := val(FWInputBox("Digite o peso limite de peixes, conforme a legislação", ""))
+Local nPesoPeixe := FWInputBox("Digite o peso total dos peixes: ", "")
+Local nMulta
+Local nExcedente
+Local cMsg
+
+IF "." $ nPesoPeixe .or.  "," $nPesoPeixe
+     nPesoPeixe := val(STRTRAN( nPesoPeixe, " , ", " . ",))
 
 ELSE
-       nAltura := val(nAltura)/100
+       nPesoPeixe := val(nPesoPeixe)
 ENDIF
 
-IF "." $ nPeso .or.  "," $nPeso
-     nPeso := val(STRTRAN( nPeso, " , ", " . ",))
+IF nPesoPeixe > nLimite
+  nExcedente := nPesoPeixe - nLimite
+    nMulta := nExcedente * 4
+
+
+
+  cMsg := "Você ultrapassou o limite maximo permitido" + CHR(13) + CHR(10) + "Você deve pagar o valor execendente de R$"+ CValToChar(nMulta)
 
 ELSE
-nPeso := val(nPeso)
-ENDIF
+  cMsg := "Você pescou" + CValToChar(nPesoPeixe) + "kilos de peixe"
 
-nIMC := nPeso / (nAltura ^2)
-
-Iif(FindFunction("APMsgInfo"), APMsgInfo("O seu IMC é: ", +str(nIMC,5,2)), MsgInfo("O seu IMC é: ", +str(nIMC,5,2)))
+  ENDIF
+   IW_MsgBox(cMsg, "Resultado","OK")
 
 
 RETURN
