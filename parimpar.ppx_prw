@@ -24,18 +24,18 @@
 #line 10 "c:/totvs/protheus/workspace/protheus-advpl/parimpar.prw"
 Function U_parimpar()
 
-Private  nN1, nN2, nN := 0
+	Private  nN1, nN2, nN := 0
 
-nN1 := val(FWInputBox("Digite um número"))
-nN2 := val(FWInputBox("Digite outro número"))
+	nN1 := val(FWInputBox("Digite um número"))
+	nN2 := val(FWInputBox("Digite outro número"))
 
-nN := nN1 + nN2
+	nN := nN1 + nN2
 
-if (nN % 2 = 0)
-Iif(FindFunction("APMsgAlert"), APMsgAlert("A soma dos dois números é PAR",), MsgAlert("A soma dos dois números é PAR",))
+	if (nN % 2 = 0)
+		Iif(FindFunction("APMsgAlert"), APMsgAlert("A soma dos dois números é PAR",), MsgAlert("A soma dos dois números é PAR",))
 
-else
-   Iif(FindFunction("APMsgAlert"), APMsgAlert("A soma dos dois números é IMPAR",), MsgAlert("A soma dos dois números é IMPAR",))
+	else
+		Iif(FindFunction("APMsgAlert"), APMsgAlert("A soma dos dois números é IMPAR",), MsgAlert("A soma dos dois números é IMPAR",))
 
- ENDIF
+	ENDIF
 Return

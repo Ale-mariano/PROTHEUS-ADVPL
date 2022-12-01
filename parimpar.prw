@@ -9,21 +9,21 @@
 /*/
 User Function parimpar()
 
-Private  nN1, nN2, nN := 0
+	Private  nN1, nN2, nN := 0
 
-nN1 := val(FWInputBox("Digite um número"))
-nN2 := val(FWInputBox("Digite outro número"))
+	nN1 := val(FWInputBox("Digite um número"))
+	nN2 := val(FWInputBox("Digite outro número"))
 
-nN := nN1 + nN2
+	nN := nN1 + nN2
 
-if (nN % 2 = 0)
-MsgAlert("A soma dos dois números é PAR")
+	if (nN % 2 = 0)
+		MsgAlert("A soma dos dois números é PAR")
 
-else
-   MsgAlert("A soma dos dois números é IMPAR")
+	else
+		MsgAlert("A soma dos dois números é IMPAR")
 
- ENDIF   
-Return 
+	ENDIF
+Return
 
 
 
