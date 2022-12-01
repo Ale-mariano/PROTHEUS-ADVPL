@@ -85,8 +85,10 @@
 		{
 			"args": [],
 			"label": "U_notas"
+		},
+		{
+			"label": "U_teste_dias"
 		}
 	],
-	"lastProgramExecuted": "U_parimpar",
-	"lastProgramArgumens": []
+	"lastProgramExecuted": "U_teste_dias"
 }

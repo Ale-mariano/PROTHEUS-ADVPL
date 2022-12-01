@@ -1,0 +1,67 @@
+#line 1 "c:/totvs/protheus/protheus/include\protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\dialog.ch"
+#line 28 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\font.ch"
+#line 29 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\ptmenu.ch"
+#line 31 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\print.ch"
+#line 33 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\colors.ch"
+#line 35 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\folder.ch"
+#line 37 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\msobject.ch"
+#line 38 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\vkey.ch"
+#line 42 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\winapi.ch"
+#line 44 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\fwcommand.ch"
+#line 47 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\fwcss.ch"
+#line 50 "protheus.ch"
+#line 10 "c:/totvs/protheus/workspace/protheus-advpl/teste_dias.prw"
+Function U_teste_dias()
+
+	Private nX := 0
+	Private cDia
+
+	nX := val(FWinputBox("Digite um número: "))
+
+	IF (nX = 1)
+		Iif(FindFunction("APMsgAlert"), APMsgAlert(cDia:="domingo",), MsgAlert(cDia:="domingo",))
+
+	ELSE
+		IF (nX = 2)
+			Iif(FindFunction("APMsgAlert"), APMsgAlert(cDia:="segunda",), MsgAlert(cDia:="segunda",))
+		ELSE
+			IF (nX = 3)
+				Iif(FindFunction("APMsgAlert"), APMsgAlert(cDia:="terça",), MsgAlert(cDia:="terça",))
+
+			ELSE
+				IF (nX = 4)
+					Iif(FindFunction("APMsgAlert"), APMsgAlert(cDia:="quarta",), MsgAlert(cDia:="quarta",))
+				ELSE
+					IF (nX = 5)
+						Iif(FindFunction("APMsgAlert"), APMsgAlert(cDia:="quinta",), MsgAlert(cDia:="quinta",))
+					ELSE
+						IF (nX = 6)
+							Iif(FindFunction("APMsgAlert"), APMsgAlert(cDia:="sexta",), MsgAlert(cDia:="sexta",))
+
+						ELSE
+							IF (nX = 7)
+								Iif(FindFunction("APMsgAlert"), APMsgAlert(cDia:="sábado",), MsgAlert(cDia:="sábado",))
+
+							ELSE
+								Iif(FindFunction("APMsgAlert"), APMsgAlert(cDia, "valor inválido"), MsgAlert(cDia, "valor inválido"))
+
+							ENDIF
+						ENDIF
+					ENDIF
+				ENDIF
+			ENDIF
+		ENDIF
+	ENDIF
+
+RETURN
