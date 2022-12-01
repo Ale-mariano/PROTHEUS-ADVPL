@@ -9,17 +9,18 @@
 /*/
 User Function parimpar()
 
-Local nVal1
-Local nVal2
+Private  nN1, nN2, nN := 0
 
-nVal1 := val(FWInputBox("Digite o primeiro número"))
-nVal2 := val(FWInputBox("Digite o segundo número"))
+nN1 := val(FWInputBox("Digite um número"))
+nN2 := val(FWInputBox("Digite outro número"))
 
-if (i % 2 = 0)
-MsgAlert("A soma dos dois números é par")
+nN := nN1 + nN2
+
+if (nN % 2 = 0)
+MsgAlert("A soma dos dois números é PAR")
 
 else
-   MsgAlert("A soma dos dois números é impar") 
+   MsgAlert("A soma dos dois números é IMPAR")
 
  ENDIF   
 Return 

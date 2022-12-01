@@ -1,0 +1,41 @@
+#line 1 "c:/totvs/protheus/protheus/include\protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\dialog.ch"
+#line 28 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\font.ch"
+#line 29 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\ptmenu.ch"
+#line 31 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\print.ch"
+#line 33 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\colors.ch"
+#line 35 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\folder.ch"
+#line 37 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\msobject.ch"
+#line 38 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\vkey.ch"
+#line 42 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\winapi.ch"
+#line 44 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\fwcommand.ch"
+#line 47 "protheus.ch"
+#line 1 "c:/totvs/protheus/protheus/include\fwcss.ch"
+#line 50 "protheus.ch"
+#line 10 "c:/totvs/protheus/workspace/protheus-advpl/parimpar.prw"
+Function U_parimpar()
+
+Private  nN1, nN2, nN := 0
+
+nN1 := val(FWInputBox("Digite um número"))
+nN2 := val(FWInputBox("Digite outro número"))
+
+nN := nN1 + nN2
+
+if (nN % 2 = 0)
+Iif(FindFunction("APMsgAlert"), APMsgAlert("A soma dos dois números é PAR",), MsgAlert("A soma dos dois números é PAR",))
+
+else
+   Iif(FindFunction("APMsgAlert"), APMsgAlert("A soma dos dois números é IMPAR",), MsgAlert("A soma dos dois números é IMPAR",))
+
+ ENDIF
+Return
