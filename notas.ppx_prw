@@ -21,17 +21,35 @@
 #line 47 "protheus.ch"
 #line 1 "c:/totvs/protheus/protheus/include\fwcss.ch"
 #line 50 "protheus.ch"
-#line 2 "c:/totvs/protheus/workspace/protheus-advpl/avetor2.prw"
-#line 1 "c:/totvs/protheus/protheus/include\parmtype.ch"
-#line 1 "c:/totvs/protheus/protheus/include\parmtypech.ch"
-#line 3 "parmtype.ch"
-#line 5 "c:/totvs/protheus/workspace/protheus-advpl/avetor2.prw"
-Function U_aVetor2()
+#line 11 "c:/totvs/protheus/workspace/protheus-advpl/notas.prw"
+Function U_notas()
 
-local aVetor := {10,20,30}
+	Private nNota1, nNota2, soma, media := 0
+	Private cAluno
 
-Aadd(avetor, 40)
-Alert (Len(aVetor))
+	cAluno := val(FwinputBox("Digite o nome do aluno "))
+	nNota1 := val(FwinputBox("Digite a primeira nota "))
+	nNota2 := val(FwinputBox("Digite a segunda nota "))
+
+	soma := nNota1 + nNota2
+	media := soma /2
+
+	Iif(FindFunction("APMsgInfo"), APMsgInfo("A media é:", str(media,5,1)), MsgInfo("A media é:", str(media,5,1)))
+
+	IF(MEDIA >= 7)
+		Iif(FindFunction("APMsgInfo"), APMsgInfo("APROVADO!",), MsgInfo("APROVADO!",))
+
+	ELSE
+		IF(MEDIA = 6 .and.  MEDIA > 5  )
+
+			Iif(FindFunction("APMsgInfo"), APMsgInfo("RECUPERAÇAO!",), MsgInfo("RECUPERAÇAO!",))
+
+		ELSE
+			Iif(FindFunction("APMsgInfo"), APMsgInfo("REPROVADO!",), MsgInfo("REPROVADO!",))
+
+
+		ENDIF
+	ENDIF
 
 
 Return

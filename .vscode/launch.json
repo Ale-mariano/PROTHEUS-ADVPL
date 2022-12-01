@@ -81,8 +81,12 @@
 		{
 			"args": [],
 			"label": "U_menor_tres"
+		},
+		{
+			"args": [],
+			"label": "U_notas"
 		}
 	],
-	"lastProgramExecuted": "U_menor_tres",
+	"lastProgramExecuted": "U_notas",
 	"lastProgramArgumens": []
 }
