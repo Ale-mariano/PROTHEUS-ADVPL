@@ -44,7 +44,45 @@
 		},
 		{
 			"label": "U_DpSalary"
+		},
+		{
+			"label": "U_Alturas"
+		},
+		{
+			"label": "U_CadPessoa"
+		},
+		{
+			"args": [],
+			"label": "U_soma"
+		},
+		{
+			"args": [],
+			"label": "U_area"
+		},
+		{
+			"args": [],
+			"label": "U_parimpar"
+		},
+		{
+			"label": "U_calculadora"
+		},
+		{
+			"args": [],
+			"label": "U_Bloco"
+		},
+		{
+			"args": [],
+			"label": "U_Avetor"
+		},
+		{
+			"args": [],
+			"label": "U_Avetor2"
+		},
+		{
+			"args": [],
+			"label": "U_menor_tres"
 		}
 	],
-	"lastProgramExecuted": "U_DpSalary"
+	"lastProgramExecuted": "U_menor_tres",
+	"lastProgramArgumens": []
 }
