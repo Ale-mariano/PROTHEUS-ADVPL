@@ -21,21 +21,33 @@
 #line 47 "protheus.ch"
 #line 1 "c:/totvs/protheus/protheus/include\fwcss.ch"
 #line 50 "protheus.ch"
-#line 10 "c:/totvs/protheus/workspace/protheus-advpl/parimpar.prw"
-Function U_parimpar()
+#line 13 "c:/totvs/protheus/workspace/protheus-advpl/crescente.prw"
+Function U_crescente()
 
-	Private  nN1, nN2, nN := 0
+	Private nX, nY := 0
 
-	nN1 := val(FWInputBox("Digite um número"))
-	nN2 := val(FWInputBox("Digite outro número"))
 
-	nN := nN1 + nN2
+	nX := val(FwInputBox("Digite primeiro valor: "))
+	nY := val(FwInputBox("Digite segundo valor: "))
 
-	if (nN % 2 = 0)
-		Iif(FindFunction("APMsgAlert"), APMsgAlert("A soma dos dois números é PAR",), MsgAlert("A soma dos dois números é PAR",))
+	While (nX <> nY)
 
-	else
-		Iif(FindFunction("APMsgAlert"), APMsgAlert("A soma dos dois números é IMPAR",), MsgAlert("A soma dos dois números é IMPAR",))
+		If nX < nY
 
-	ENDIF
+			Iif(FindFunction("APMsgAlert"), APMsgAlert("CRESCENTE",), MsgAlert("CRESCENTE",))
+
+		Else
+			Iif(FindFunction("APMsgAlert"), APMsgAlert("DECRESCENTE",), MsgAlert("DECRESCENTE",))
+
+		Endif
+
+		nX := val(FwInputBox("Digite mais um valor: "))
+		nY := val(FwInputBox("Digite outro valor: "))
+
+	EndDo
+
+
+
+
+
 Return
